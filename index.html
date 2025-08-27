@@ -1,9 +1,9 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deluxe Menu Editor - Minecraft Tools</title>
+    <title>Minecraft Tools Hub</title>
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/deluxe-menu.css">
+    <link rel="stylesheet" href="css/home.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P:wght@400&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Audiowide&family=Bungee&family=Fredoka+One:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/all.min.css">
@@ -15,7 +15,7 @@
             <span class="nav-title">ᴍɪɴᴇᴄʀᴀꜰᴛ ᴛᴏᴏʟꜱ</span>
         </div>
         <div class="nav-menu">
-            <a class="nav-btn" href="/html/">
+            <a class="nav-btn active" href="/html/">
                 <i class="fas fa-home"></i> Home
             </a>
             <a class="nav-btn" href="/html/ranktag">
@@ -24,177 +24,87 @@
             <a class="nav-btn" href="/html/smallfont">
                 <i class="fas fa-font"></i> Small Font
             </a>
-            <a class="nav-btn active" href="/html/deluxe-menu">
+            <a class="nav-btn" href="/html/deluxe-menu">
                 <i class="fas fa-th-large"></i> Menu Editor
+            </a>
+                        </a>
+            <a class="nav-btn" href="/html/motd-Generator">
+                <i class="fas fa-th-large"></i> MOTD Generator
             </a>
         </div>
     </nav>
 
+
     <div class="container">
-        <header class="page-header">
-            <h1 class="page-title">
-                <span class="minecraft-text">DELUXE MENU</span>
-                <span class="editor-text">EDITOR</span>
+        <header class="hero-header">
+            <h1 class="hero-title">
+                <span class="minecraft-text">MINECRAFT</span>
+                <span class="tools-text">TOOLS HUB</span>
             </h1>
-            <p class="page-subtitle">Create and customize Minecraft server menus with live preview</p>
+            <p class="hero-subtitle">Create amazing rank tags, convert text to small fonts, and design custom menus</p>
         </header>
 
-        <div class="editor-container">
-            <div class="menu-settings-panel">
-                <div class="panel-header">
-                    <h2 class="panel-title">
-                        <i class="fas fa-cogs"></i> Menu Settings
-                    </h2>
+        <div class="tools-grid">
+            <div class="tool-card" onclick="location.href='ranktag.html'">
+                <div class="tool-icon">
+                    <i class="fas fa-tags"></i>
                 </div>
-
-                <div class="settings-content">
-                    <div class="input-group">
-                        <label for="menu_title" class="label">
-                            <i class="fas fa-heading"></i> Menu Title:
-                        </label>
-                        <input type="text" id="menu_title" name="menu_title" class="text-input" placeholder="My Custom Menu" required="">
-                    </div>
-
-                    <div class="input-group">
-                        <label for="open_command" class="label">
-                            <i class="fas fa-terminal"></i> Open Command:
-                        </label>
-                        <input type="text" id="open_command" name="open_command" class="text-input" placeholder="/mymenu">
-                    </div>
-
-                    <div class="input-group">
-                        <label for="size" class="label">
-                            <i class="fas fa-expand-arrows-alt"></i> Inventory Size:
-                        </label>
-                        <select id="size" name="size" class="select-dropdown">
-                            <option value="9">1 Row (9 slots)</option>
-                            <option value="18">2 Rows (18 slots)</option>
-                            <option value="27" selected="">3 Rows (27 slots)</option>
-                            <option value="36">4 Rows (36 slots)</option>
-                            <option value="45">5 Rows (45 slots)</option>
-                            <option value="54">6 Rows (54 slots)</option>
-                        </select>
-                    </div>
-
-                    <div class="input-group">
-                        <label for="open_requirement" class="label">
-                            <i class="fas fa-key"></i> Open Requirements:
-                        </label>
-                        <textarea name="open_requirement" id="open_requirement" rows="4" class="text-area" placeholder="- permission: 'myplugin.openmenu'
-- has_money: 100"></textarea>
-                    </div>
-
-                    <div class="items-section">
-                        <div class="section-header">
-                            <h3 class="section-title">
-                                <i class="fas fa-cube"></i> Menu Items
-                            </h3>
-                            <button type="button" id="add-item" class="add-item-btn">
-                                <i class="fas fa-plus"></i> Add Item
-                            </button>
-                        </div>
-                        
-                        <div id="items-container" class="items-list">
-                            <!-- Dynamic items will be added here -->
-                        </div>
-                    </div>
-
-                    <div class="action-buttons">
-                        <input type="file" id="import-file" accept=".yml,.yaml" style="display: none;">
-                        <button type="button" id="import-button" class="secondary-btn">
-                            <i class="fas fa-upload"></i> Import YAML
-                        </button>
-                        <button type="button" id="export-button" class="primary-btn">
-                            <i class="fas fa-download"></i> Export YAML
-                        </button>
-                    </div>
+                <h3 class="tool-title">Rank Tag Generator</h3>
+                <p class="tool-description">Create custom rank tags with gradients, fonts, and styles</p>
+                <div class="tool-features">
+                    <span class="feature-tag">Custom Colors</span>
+                    <span class="feature-tag">Gradients</span>
+                    <span class="feature-tag">Multiple Fonts</span>
                 </div>
             </div>
 
-            <div class="preview-panel">
-                <div class="panel-header">
-                    <h2 class="panel-title">
-                        <i class="fas fa-eye"></i> Live Preview
-                    </h2>
-                    <div class="preview-info">
-                        <span id="slot-count">27 slots</span>
-                    </div>
+            <div class="tool-card" onclick="location.href='smallfont.html'">
+                <div class="tool-icon">
+                    <i class="fas fa-font"></i>
                 </div>
+                <h3 class="tool-title">Small Font Generator</h3>
+                <p class="tool-description">Convert text to Minecraft-style small fonts and Unicode characters</p>
+                <div class="tool-features">
+                    <span class="feature-tag">Multiple Styles</span>
+                    <span class="feature-tag">Copy & Paste</span>
+                    <span class="feature-tag">Live Preview</span>
+                </div>
+            </div>
 
-                <div class="preview-content">
-                    <div class="minecraft-inventory">
-                        <div class="inventory-header">
-                            <span class="inventory-title" id="preview-title">My Custom Menu</span>
-                        </div>
-                        <div id="menu-preview" class="inventory-grid">
-                            <!-- Dynamic inventory slots will be generated here -->
-                        </div>
-                    </div>
+            <div class="tool-card" onclick="location.href='deluxe-menu.html'">
+                <div class="tool-icon">
+                    <i class="fas fa-th-large"></i>
+                </div>
+                <h3 class="tool-title">Deluxe Menu Editor</h3>
+                <p class="tool-description">Design and customize Minecraft server menus with interactive previews</p>
+                <div class="tool-features">
+                    <span class="feature-tag">Live Preview</span>
+                    <span class="feature-tag">YAML Export</span>
+                    <span class="feature-tag">Drag & Drop</span>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="item-editor-modal" id="itemEditorModal" style="display: none;">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">
-                    <i class="fas fa-edit"></i> Edit Item
-                </h3>
-                <button class="close-btn" onclick="closeItemEditor()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group">
-                    <label class="label">Material:</label>
-                    <select id="item-material" class="select-dropdown">
-                        <option value="STONE">Stone</option>
-                        <option value="GRASS_BLOCK">Grass Block</option>
-                        <option value="DIAMOND">Diamond</option>
-                        <option value="IRON_INGOT">Iron Ingot</option>
-                        <option value="GOLD_INGOT">Gold Ingot</option>
-                        <option value="EMERALD">Emerald</option>
-                        <option value="REDSTONE">Redstone</option>
-                        <option value="BOOK">Book</option>
-                        <option value="PAPER">Paper</option>
-                        <option value="COMPASS">Compass</option>
-                        <option value="CLOCK">Clock</option>
-                        <option value="BARRIER">Barrier</option>
-                    </select>
+            <div class="tool-card" onclick="location.href='smallfont.html'">
+                <div class="tool-icon">
+                    <i class="fas fa-brush"></i>
                 </div>
-                <div class="input-group">
-                    <label class="label">Display Name:</label>
-                    <input type="text" id="item-name" class="text-input" placeholder="&6Item Name">
+                <h3 class="tool-title">MOTD Generator</h3>
+                <p class="tool-description">Generate colourful MOTDs for your server</p>
+                <div class="tool-features">
+                    <span class="feature-tag">Multiple Styles</span>
+                    <span class="feature-tag">Copy & Paste</span>
+                    <span class="feature-tag">Live Preview</span>
                 </div>
-                <div class="input-group">
-                    <label class="label">Lore (one line per row):</label>
-                    <textarea id="item-lore" class="text-area" rows="3" placeholder="&7Line 1
-&7Line 2"></textarea>
-                </div>
-                <div class="input-group">
-                    <label class="label">Slot Position:</label>
-                    <input type="number" id="item-slot" class="text-input" min="0" max="53" placeholder="0">
-                </div>
-                <div class="input-group">
-                    <label class="label">Click Actions:</label>
-                    <textarea id="item-actions" class="text-area" rows="3" placeholder="- '[player] say Hello World!'
-- '[console] give %player% diamond 1'"></textarea>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="secondary-btn" onclick="closeItemEditor()">Cancel</button>
-                <button class="primary-btn" onclick="saveItemEditor()">Save Item</button>
             </div>
         </div>
     </div>
 
     <div id="notification" class="notification">
         <i class="fas fa-check-circle"></i>
-        <span class="notification-text">Menu updated!</span>
+        <span class="notification-text">Welcome to Minecraft Tools!</span>
     </div>
 
     <script src="js/common.js"></script>
-    <script src="js/deluxe-menu.js"></script>
+    <script src="js/home.js"></script>
 
 </body></html>

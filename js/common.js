@@ -117,6 +117,7 @@ function setActiveNavButton(activePage) {
     });
 }
 
+
 // Add hover effects to buttons
 document.addEventListener('DOMContentLoaded', function() {
     // Add hover effects for buttons
