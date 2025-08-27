@@ -1,0 +1,165 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rank Tags Generator - Minecraft Tools</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/ranktag.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P:wght@400&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Audiowide&family=Bungee&family=Fredoka+One:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="nav-logo">⚒️</span>
+            <span class="nav-title">ᴍɪɴᴇᴄʀᴀꜰᴛ ᴛᴏᴏʟꜱ</span>
+        </div>
+        <div class="nav-menu">
+            <a class="nav-btn" href="/html/">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a class="nav-btn active" href="/html/ranktag">
+                <i class="fas fa-tags"></i> Rank Tags
+            </a>
+            <a class="nav-btn" href="/html/smallfont">
+                <i class="fas fa-font"></i> Small Font
+            </a>
+            <a class="nav-btn" href="/html/deluxe-menu">
+                <i class="fas fa-th-large"></i> Menu Editor
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="page-header">
+            <h1 class="page-title">
+                <span class="minecraft-text">RANK TAGS</span>
+                <span class="generator-text">GENERATOR</span>
+            </h1>
+        </header>
+
+        <main class="main-content">
+            <div class="controls-section">
+                <div class="input-group">
+                    <label for="rankText" class="label">Rank Text:</label>
+                    <input type="text" id="rankText" class="text-input" placeholder="e.g. MEMBER" maxlength="20">
+                </div>
+
+                <div class="input-group">
+                    <label for="backgroundTint" class="label">Background Tint:</label>
+                    <div class="color-picker-wrapper">
+                        <input type="color" id="backgroundTint" class="color-picker" value="#ff6b6b">
+                        <div class="color-preview" id="colorPreview"></div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="useGradient" class="checkbox">
+                        <label for="useGradient" class="checkbox-label">
+                            <i class="fas fa-check"></i>
+                            Use Gradient
+                        </label>
+                    </div>
+                </div>
+
+                <div class="input-group gradient-color-group" id="gradientColorGroup" style="display: none;">
+                    <label for="gradientColor" class="label">Gradient Color:</label>
+                    <div class="color-picker-wrapper">
+                        <input type="color" id="gradientColor" class="color-picker" value="#4ecdc4">
+                        <div class="color-preview" id="gradientColorPreview"></div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="fontFamily" class="label">Font Style:</label>
+                    <select id="fontFamily" class="select-dropdown">
+                        <option value="Press Start 2P">Pixel Classic</option>
+                        <option value="Orbitron">Futuristic</option>
+                        <option value="Audiowide">Neon Glow</option>
+                        <option value="Bungee">Bold Block</option>
+                        <option value="Fredoka One">Rounded Fun</option>
+                        <option value="Arial">Clean Modern</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="fontSize" class="label">Text Size:</label>
+                    <div class="slider-wrapper">
+                        <input type="range" id="fontSize" class="slider" min="12" max="32" value="16">
+                        <span class="slider-value" id="fontSizeValue">16px</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="tagSize" class="label">Tag Size:</label>
+                    <div class="slider-wrapper">
+                        <input type="range" id="tagSize" class="slider" min="0.8" max="2.0" step="0.1" value="1.0">
+                        <span class="slider-value" id="tagSizeValue">100%</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="templateStyle" class="label">Template Style:</label>
+                    <select id="templateStyle" class="select-dropdown">
+                        <option value="rounded">Rounded Edges</option>
+                        <option value="sharp">Sharp Edges</option>
+                        <option value="modern">Modern Style</option>
+                        <option value="classic">Classic Style</option>
+                    </select>
+                </div>
+
+                <div class="button-group">
+                    <button id="generateBtn" class="generate-btn">
+                        <i class="fas fa-magic"></i>
+                        GENERATE
+                    </button>
+                    <button id="downloadBtn" class="download-btn">
+                        <i class="fas fa-download"></i>
+                        Download PNG
+                    </button>
+                </div>
+            </div>
+
+            <div class="preview-section">
+                <div class="preview-container">
+                    <div id="tagPreview" class="tag-preview">
+                        <span class="preview-text">MEMBER</span>
+                    </div>
+                </div>
+                <canvas id="exportCanvas" style="display: none;"></canvas>
+            </div>
+
+            <div class="json-section">
+                <div class="json-header">
+                    <h3 class="json-title">Resource Pack JSON Snippet:</h3>
+                    <button id="copyBtn" class="copy-btn">
+                        <i class="fas fa-copy"></i>
+                        Copy Snippet
+                    </button>
+                </div>
+                <pre id="jsonOutput" class="json-output">{
+    "type": "minecraft:text",
+    "text": "MEMBER",
+    "color": "#ff6b6b",
+    "bold": true,
+    "extra": [
+        {
+            "text": "",
+            "color": "#FFFFFF"
+        }
+    ]
+}</pre>
+            </div>
+        </main>
+    </div>
+
+    <div id="notification" class="notification">
+        <i class="fas fa-check-circle"></i>
+        <span class="notification-text">Copied to clipboard!</span>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/ranktag.js"></script>
+
+</body></html>
