@@ -1,0 +1,324 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', monospace;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #2d1b69 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation */
+.navbar {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #ff6b6b;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: slideInDown 0.8s ease-out;
+}
+
+.navbar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo {
+    font-size: 24px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.nav-title {
+    font-size: 16px;
+    color: #ff6b6b;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #333;
+    border-radius: 8px;
+    color: #ffffff;
+    padding: 10px 15px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.nav-btn:hover {
+    border-color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.2);
+    transform: translateY(-2px);
+}
+
+.nav-btn.active {
+    background: linear-gradient(45deg, #ff6b6b, #ff8787);
+    border-color: #ff6b6b;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Page Headers */
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.page-title {
+    font-size: 24px;
+    line-height: 1.5;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+}
+
+.page-subtitle {
+    font-size: 12px;
+    color: #4ecdc4;
+    margin-top: 15px;
+    opacity: 0.9;
+}
+
+/* Common UI Elements */
+.label {
+    display: block;
+    font-size: 12px;
+    color: #ff6b6b;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.text-input, .text-area, .select-dropdown {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #333;
+    border-radius: 5px;
+    color: #ffffff;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.text-input:focus, .text-area:focus, .select-dropdown:focus {
+    outline: none;
+    border-color: #ff6b6b;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    transform: translateY(-2px);
+}
+
+.text-area {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.primary-btn, .secondary-btn, .generate-btn, .download-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-transform: uppercase;
+}
+
+.primary-btn, .generate-btn {
+    background: linear-gradient(45deg, #ff6b6b, #ff8787);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.secondary-btn, .download-btn {
+    background: linear-gradient(45deg, #4ecdc4, #44a08d);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
+}
+
+.primary-btn:hover, .generate-btn:hover, .secondary-btn:hover, .download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+}
+
+.secondary-btn:hover, .download-btn:hover {
+    box-shadow: 0 6px 20px rgba(78, 205, 196, 0.6);
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, #ff6b6b, #ff8787);
+    color: #ffffff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    transform: translateY(-100px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.notification.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+    }
+    to {
+        text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 107, 107, 0.6);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .page-title {
+        font-size: 18px;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .nav-btn {
+        font-size: 8px;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 14px;
+    }
+}

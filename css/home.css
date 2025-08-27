@@ -1,0 +1,124 @@
+/* Hero Section */
+.hero-header {
+    text-align: center;
+    margin: 60px 0;
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero-title {
+    font-size: 32px;
+    line-height: 1.5;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 12px;
+    color: #4ecdc4;
+    margin-bottom: 0;
+    opacity: 0.9;
+}
+
+.minecraft-text {
+    color: #ff6b6b;
+    display: block;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.tools-text {
+    color: #4ecdc4;
+    display: block;
+    margin: 5px 0;
+}
+
+/* Tools Grid */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin: 60px 0;
+}
+
+.tool-card {
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid #ff6b6b;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(255, 107, 107, 0.2);
+    animation: slideInUp 0.8s ease-out;
+}
+
+.tool-card:hover {
+    transform: translateY(-8px);
+    border-color: #4ecdc4;
+    box-shadow: 0 12px 40px rgba(255, 107, 107, 0.4);
+}
+
+.tool-icon {
+    font-size: 48px;
+    color: #ff6b6b;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.tool-card:hover .tool-icon {
+    color: #4ecdc4;
+    transform: scale(1.1);
+}
+
+.tool-title {
+    font-size: 16px;
+    color: #ff6b6b;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.tool-description {
+    font-size: 11px;
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.tool-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.feature-tag {
+    background: rgba(255, 107, 107, 0.2);
+    border: 1px solid #ff6b6b;
+    border-radius: 12px;
+    padding: 4px 8px;
+    font-size: 8px;
+    color: #ff6b6b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 24px;
+    }
+    
+    .tools-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .tool-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 18px;
+    }
+}

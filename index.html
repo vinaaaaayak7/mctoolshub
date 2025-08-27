@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Tools Hub</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P:wght@400&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Audiowide&family=Bungee&family=Fredoka+One:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="nav-logo">⚒️</span>
+            <span class="nav-title">ᴍɪɴᴇᴄʀᴀꜰᴛ ᴛᴏᴏʟꜱ</span>
+        </div>
+        <div class="nav-menu">
+            <a class="nav-btn active" href="/html/">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a class="nav-btn" href="/html/ranktag">
+                <i class="fas fa-tags"></i> Rank Tags
+            </a>
+            <a class="nav-btn" href="/html/smallfont">
+                <i class="fas fa-font"></i> Small Font
+            </a>
+            <a class="nav-btn" href="/html/deluxe-menu">
+                <i class="fas fa-th-large"></i> Menu Editor
+            </a>
+                        </a>
+            <a class="nav-btn" href="/html/motd-Generator">
+                <i class="fas fa-th-large"></i> MOTD Generator
+            </a>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <header class="hero-header">
+            <h1 class="hero-title">
+                <span class="minecraft-text">MINECRAFT</span>
+                <span class="tools-text">TOOLS HUB</span>
+            </h1>
+            <p class="hero-subtitle">Create amazing rank tags, convert text to small fonts, and design custom menus</p>
+        </header>
+
+        <div class="tools-grid">
+            <div class="tool-card" onclick="location.href='ranktag.html'">
+                <div class="tool-icon">
+                    <i class="fas fa-tags"></i>
+                </div>
+                <h3 class="tool-title">Rank Tag Generator</h3>
+                <p class="tool-description">Create custom rank tags with gradients, fonts, and styles</p>
+                <div class="tool-features">
+                    <span class="feature-tag">Custom Colors</span>
+                    <span class="feature-tag">Gradients</span>
+                    <span class="feature-tag">Multiple Fonts</span>
+                </div>
+            </div>
+
+            <div class="tool-card" onclick="location.href='smallfont.html'">
+                <div class="tool-icon">
+                    <i class="fas fa-font"></i>
+                </div>
+                <h3 class="tool-title">Small Font Generator</h3>
+                <p class="tool-description">Convert text to Minecraft-style small fonts and Unicode characters</p>
+                <div class="tool-features">
+                    <span class="feature-tag">Multiple Styles</span>
+                    <span class="feature-tag">Copy & Paste</span>
+                    <span class="feature-tag">Live Preview</span>
+                </div>
+            </div>
+
+            <div class="tool-card" onclick="location.href='deluxe-menu.html'">
+                <div class="tool-icon">
+                    <i class="fas fa-th-large"></i>
+                </div>
+                <h3 class="tool-title">Deluxe Menu Editor</h3>
+                <p class="tool-description">Design and customize Minecraft server menus with interactive previews</p>
+                <div class="tool-features">
+                    <span class="feature-tag">Live Preview</span>
+                    <span class="feature-tag">YAML Export</span>
+                    <span class="feature-tag">Drag & Drop</span>
+                </div>
+            </div>
+
+            <div class="tool-card" onclick="location.href='smallfont.html'">
+                <div class="tool-icon">
+                    <i class="fas fa-brush"></i>
+                </div>
+                <h3 class="tool-title">MOTD Generator</h3>
+                <p class="tool-description">Generate colourful MOTDs for your server</p>
+                <div class="tool-features">
+                    <span class="feature-tag">Multiple Styles</span>
+                    <span class="feature-tag">Copy & Paste</span>
+                    <span class="feature-tag">Live Preview</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification">
+        <i class="fas fa-check-circle"></i>
+        <span class="notification-text">Welcome to Minecraft Tools!</span>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/home.js"></script>
+
+</body></html>
